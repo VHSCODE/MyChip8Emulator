@@ -49,7 +49,7 @@ void CPU::draw_screen()
     uint32_t pixels[2048];
 
     SDL_RenderClear(renderer);
-    //Code snippet taken from https://github.com/JamesGriffin/CHIP-8-Emulator/blob/master/src/main.cpp
+    //Code snippet taken from https://github.com/JamesGriffin/CHIP-8-Emulator/blob/master/src/main.cpp. Ty James
     for (int i = 0; i < 2048; ++i) {
         uint8_t pixel = this->gfx[i];
         pixels[i] = (0x00FFFFFF * pixel) | 0xFF000000;
@@ -94,7 +94,7 @@ void CPU::init_gfx()
     }
     window = SDL_CreateWindow("Chip8Emulator",0,0,640,320, SDL_WINDOW_SHOWN);
 
-    renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    renderer = SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
 
     texture = SDL_CreateTexture(renderer,SDL_PIXELFORMAT_ARGB8888,
                                 SDL_TEXTUREACCESS_STREAMING,
