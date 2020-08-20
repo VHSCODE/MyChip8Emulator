@@ -3,15 +3,17 @@
 #include<chrono>
 #include <thread>
 #include "SDL2/SDL.h"
-
-void init_sdl();
-
-int main()
+int main(int argc, char* argv[])
 {
+
+
     CPU emu =  CPU();
 
-    if(emu.loadRom("INVADERS.ch8") != 0)
+    if(emu.loadRom(argv[1]) != 0)
+    {
+        std::cout << "Could not load rom file" << std::endl;
         return -1;
+    }
 
     while( emu.isRunning())
     {
@@ -40,8 +42,9 @@ int main()
         {
             emu.draw_screen();
         }
-
         std::this_thread::sleep_for(std::chrono::microseconds(1200));
     }
     return 0;
 }
+
+
