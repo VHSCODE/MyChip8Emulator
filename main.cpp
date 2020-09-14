@@ -6,7 +6,6 @@
 int main(int argc, char* argv[])
 {
 
-
     CPU emu =  CPU();
 
     if(emu.loadRom(argv[1]) != 0)

@@ -14,7 +14,7 @@ CPU::CPU()
 
     I = 0;
     sp = 0;
-
+    
     for(int j = 0; j < 16; ++j)
             stack[j] = 0;
 

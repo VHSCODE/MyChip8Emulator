@@ -16,7 +16,6 @@ class CPU
 {
 public:
     CPU();
-
     int loadRom(char* filePath);
 
     void start_log();
